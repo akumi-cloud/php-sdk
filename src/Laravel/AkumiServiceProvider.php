@@ -35,7 +35,7 @@ final class AkumiServiceProvider extends ServiceProvider
 
             return new Akumi(new Config(
                 apiKey: (string) ($config['api_key'] ?? ''),
-                baseUrl: (string) ($config['base_url'] ?? 'https://api.akumi.cloud'),
+                baseUrl: (string) ($config['base_url'] ?? 'https://api.akumi.cloud/v1'),
             ));
         });
     }

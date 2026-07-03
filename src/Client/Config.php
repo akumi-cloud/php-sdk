@@ -21,7 +21,7 @@ final class Config
      */
     public function __construct(
         public readonly string $apiKey,
-        public readonly string $baseUrl = 'https://api.akumi.cloud',
+        public readonly string $baseUrl = 'https://api.akumi.cloud/v1',
         public readonly int $maxRetries = 2,
         public readonly array $retryOn = [429, 500, 502, 503, 504],
         public readonly ?ClientInterface $httpClient = null,
