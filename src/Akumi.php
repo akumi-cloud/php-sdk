@@ -8,6 +8,7 @@ use Akumi\Sdk\Client\Config;
 use Akumi\Sdk\Client\Transport;
 use Akumi\Sdk\Resources\AuditLogsResource;
 use Akumi\Sdk\Resources\ChatResource;
+use Akumi\Sdk\Resources\EmbeddingsResource;
 use Akumi\Sdk\Resources\ModelsResource;
 use Akumi\Sdk\Resources\MemoryResource;
 use Akumi\Sdk\Resources\MemoryThreadsResource;
@@ -21,6 +22,8 @@ final class Akumi
 
     public readonly ChatResource $chat;
 
+    public readonly EmbeddingsResource $embeddings;
+
     public readonly ModelsResource $models;
 
     public readonly MemoryResource $memory;
@@ -32,6 +35,7 @@ final class Akumi
         $this->transport = new Transport($config);
         $this->auditLogs = new AuditLogsResource($this->transport);
         $this->chat = new ChatResource($this->transport);
+        $this->embeddings = new EmbeddingsResource($this->transport);
         $this->models = new ModelsResource($this->transport);
         $this->memory = new MemoryResource($this->transport);
         $this->memoryThreads = new MemoryThreadsResource($this->transport);
