@@ -8,8 +8,8 @@ namespace Akumi\Sdk\Models;
 final class ChatCompletionsRequest
 {
     public function __construct(
-        public readonly string $model,
         public readonly array $messages,
+        public readonly ?string $model = null,
         public readonly ?float $temperature = null,
         public readonly ?int $max_tokens = null,
         public readonly ?bool $stream = null,
@@ -28,6 +28,9 @@ final class ChatCompletionsRequest
         public readonly ?string $tool_choice = null,
         public readonly ?bool $parallel_tool_calls = null,
         public readonly ?bool $cache = null,
+        public readonly ?array $models = null,
+        public readonly mixed $provider = null,
+        public readonly mixed $stream_options = null,
         public readonly ?array $stop = null,
         public readonly ?array $logit_bias = null,
         public readonly mixed $response_format = null,
@@ -40,8 +43,8 @@ final class ChatCompletionsRequest
     public static function fromArray(array $data): self
     {
         return new self(
-            model: $data['model'],
             messages: $data['messages'],
+            model: $data['model'] ?? null,
             temperature: $data['temperature'] ?? null,
             max_tokens: $data['max_tokens'] ?? null,
             stream: $data['stream'] ?? null,
@@ -60,6 +63,9 @@ final class ChatCompletionsRequest
             tool_choice: $data['tool_choice'] ?? null,
             parallel_tool_calls: $data['parallel_tool_calls'] ?? null,
             cache: $data['cache'] ?? null,
+            models: $data['models'] ?? null,
+            provider: $data['provider'] ?? null,
+            stream_options: $data['stream_options'] ?? null,
             stop: $data['stop'] ?? null,
             logit_bias: $data['logit_bias'] ?? null,
             response_format: $data['response_format'] ?? null,
