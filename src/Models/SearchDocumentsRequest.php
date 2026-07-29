@@ -9,7 +9,7 @@ final class SearchDocumentsRequest
 {
     public function __construct(
         public readonly string $query,
-        public readonly string $collection,
+        public readonly array $collection,
         public readonly ?string $user_ref = null,
         public readonly ?int $limit = null,
     ) {}

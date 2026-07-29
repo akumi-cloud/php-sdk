@@ -11,6 +11,7 @@ final class SearchFactsRequest
         public readonly string $query,
         public readonly ?string $user_ref = null,
         public readonly ?int $limit = null,
+        public readonly ?array $collection = null,
     ) {}
 
     /**
@@ -22,6 +23,7 @@ final class SearchFactsRequest
             query: $data['query'],
             user_ref: $data['user_ref'] ?? null,
             limit: $data['limit'] ?? null,
+            collection: $data['collection'] ?? null,
         );
     }
 }

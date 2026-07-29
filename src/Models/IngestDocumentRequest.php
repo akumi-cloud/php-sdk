@@ -10,8 +10,8 @@ final class IngestDocumentRequest
     public function __construct(
         public readonly string $title,
         public readonly string $text,
+        public readonly string $collection,
         public readonly ?string $source = null,
-        public readonly ?string $collection = null,
     ) {}
 
     /**
@@ -22,8 +22,8 @@ final class IngestDocumentRequest
         return new self(
             title: $data['title'],
             text: $data['text'],
+            collection: $data['collection'],
             source: $data['source'] ?? null,
-            collection: $data['collection'] ?? null,
         );
     }
 }
