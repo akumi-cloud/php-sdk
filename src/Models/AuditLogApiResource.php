@@ -15,8 +15,8 @@ final class AuditLogApiResource
         public readonly ?string $ipAddress,
         public readonly ?string $userAgent,
         public readonly mixed $target,
-        public readonly mixed $metadata,
-        public readonly ?string $createdAt,
+        public readonly ?array $metadata,
+        public readonly string $createdAt,
     ) {}
 
     /**

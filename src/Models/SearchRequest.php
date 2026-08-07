@@ -9,9 +9,9 @@ final class SearchRequest
 {
     public function __construct(
         public readonly string $query,
-        public readonly ?array $collection = null,
         public readonly ?string $user_ref = null,
         public readonly ?int $limit = null,
+        public readonly ?array $collection = null,
     ) {}
 
     /**
@@ -21,9 +21,9 @@ final class SearchRequest
     {
         return new self(
             query: $data['query'],
-            collection: $data['collection'] ?? null,
             user_ref: $data['user_ref'] ?? null,
             limit: $data['limit'] ?? null,
+            collection: $data['collection'] ?? null,
         );
     }
 }
