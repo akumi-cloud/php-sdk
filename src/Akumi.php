@@ -7,6 +7,7 @@ namespace Akumi\Sdk;
 use Akumi\Sdk\Client\Config;
 use Akumi\Sdk\Client\Transport;
 use Akumi\Sdk\Resources\RecallResource;
+use Akumi\Sdk\Resources\ScoresResource;
 use Akumi\Sdk\Resources\AuditLogsResource;
 use Akumi\Sdk\Resources\ChatResource;
 use Akumi\Sdk\Resources\EmbeddingsResource;
@@ -18,6 +19,8 @@ final class Akumi
     private readonly Transport $transport;
 
     public readonly RecallResource $recall;
+
+    public readonly ScoresResource $scores;
 
     public readonly AuditLogsResource $auditLogs;
 
@@ -31,6 +34,7 @@ final class Akumi
     {
         $this->transport = new Transport($config);
         $this->recall = new RecallResource($this->transport);
+        $this->scores = new ScoresResource($this->transport);
         $this->auditLogs = new AuditLogsResource($this->transport);
         $this->chat = new ChatResource($this->transport);
         $this->embeddings = new EmbeddingsResource($this->transport);
