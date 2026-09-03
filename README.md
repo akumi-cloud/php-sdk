@@ -1,6 +1,6 @@
 # Akumi PHP SDK
 
-The official PHP client for [Akumi](https://akumi.cloud), the EU-sovereign,
+The official PHP client for [Akumi](https://akumi.eu), the EU-sovereign,
 OpenAI-compatible inference API. One `base_url` for every model, governed and
 metered, with your regulated data kept in the EU.
 
@@ -21,7 +21,7 @@ composer require akumi-cloud/sdk
 
 ## Quickstart
 
-Create an API key under **app.akumi.cloud -> Platform -> API keys**, then:
+Create an API key under **app.akumi.eu -> Platform -> API keys**, then:
 
 ```php
 use Akumi\Sdk\Akumi;
@@ -73,14 +73,14 @@ $vector = $embeddings['data'][0]['embedding'];
 
 ## Configuration
 
-`fromApiKey()` connects to `https://api.akumi.cloud/v1` and retries transient
+`fromApiKey()` connects to `https://api.akumi.eu/v1` and retries transient
 failures (429, 502, 503, 504) automatically. Pass a base URL to target another
 host.
 
 ## Documentation
 
-- Guides: https://akumi.cloud/docs
-- API reference: https://akumi.cloud/docs/api-reference
+- Guides: https://docs.akumi.eu
+- API reference: https://docs.akumi.eu/api-reference
 
 ## About
 

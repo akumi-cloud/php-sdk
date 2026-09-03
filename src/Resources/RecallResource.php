@@ -54,15 +54,6 @@ final class RecallResource
     }
 
     /**
-     * @param  array<string, mixed>  $params
-     * @return array<string, mixed>
-     */
-    public function searchFacts(array $params = []): array
-    {
-        return $this->transport->send('POST', '/recall/facts/search', null, $params);
-    }
-
-    /**
      * @param  array<string, mixed>  $query
      * @return array<string, mixed>
      */
@@ -103,15 +94,6 @@ final class RecallResource
     public function erase(): array
     {
         return $this->transport->send('DELETE', '/recall', null, null);
-    }
-
-    /**
-     * @param  array<string, mixed>  $params
-     * @return array<string, mixed>
-     */
-    public function searchDocuments(array $params = []): array
-    {
-        return $this->transport->send('POST', '/recall/documents/search', null, $params);
     }
 
     /**
