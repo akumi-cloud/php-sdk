@@ -11,12 +11,12 @@ final class AuditLogApiResource
         public readonly string $id,
         public readonly string $component,
         public readonly string $action,
-        public readonly ?int $actorId,
-        public readonly ?string $ipAddress,
-        public readonly ?string $userAgent,
+        public readonly ?int $actor_id,
+        public readonly ?string $ip_address,
+        public readonly ?string $user_agent,
         public readonly mixed $target,
         public readonly mixed $metadata,
-        public readonly ?string $createdAt,
+        public readonly ?string $created_at,
     ) {}
 
     /**
@@ -28,12 +28,12 @@ final class AuditLogApiResource
             id: $data['id'],
             component: $data['component'],
             action: $data['action'],
-            actorId: $data['actorId'],
-            ipAddress: $data['ipAddress'],
-            userAgent: $data['userAgent'],
+            actor_id: $data['actor_id'],
+            ip_address: $data['ip_address'],
+            user_agent: $data['user_agent'],
             target: $data['target'],
             metadata: $data['metadata'],
-            createdAt: $data['createdAt'],
+            created_at: $data['created_at'],
         );
     }
 }
