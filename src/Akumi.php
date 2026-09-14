@@ -6,6 +6,7 @@ namespace Akumi\Sdk;
 
 use Akumi\Sdk\Client\Config;
 use Akumi\Sdk\Client\Transport;
+use Akumi\Sdk\Resources\AgentsResource;
 use Akumi\Sdk\Resources\AuditLogResource;
 use Akumi\Sdk\Resources\ChatCompletionsResource;
 use Akumi\Sdk\Resources\EmbeddingsResource;
@@ -17,6 +18,8 @@ use Akumi\Sdk\Resources\ScoresResource;
 final class Akumi
 {
     private readonly Transport $transport;
+
+    public readonly AgentsResource $agents;
 
     public readonly AuditLogResource $auditLog;
 
@@ -33,6 +36,7 @@ final class Akumi
     public function __construct(Config $config)
     {
         $this->transport = new Transport($config);
+        $this->agents = new AgentsResource($this->transport);
         $this->auditLog = new AuditLogResource($this->transport);
         $this->chatCompletions = new ChatCompletionsResource($this->transport);
         $this->embeddings = new EmbeddingsResource($this->transport);
