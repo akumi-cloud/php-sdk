@@ -54,6 +54,15 @@ final class AgentsResource
     }
 
     /**
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     */
+    public function v1AgentsCopy(string $agent, array $params = []): array
+    {
+        return $this->transport->send('POST', '/agents/' . $agent . '/copy', null, $params);
+    }
+
+    /**
      * @return array<string, mixed>
      */
     public function v1AgentsVersionsIndex(string $agent): array
