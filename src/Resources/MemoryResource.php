@@ -12,39 +12,6 @@ final class MemoryResource
     public function __construct(private readonly Transport $transport) {}
 
     /**
-     * @param  array<string, mixed>  $query
-     * @return array<string, mixed>
-     */
-    public function listThreads(array $query = []): array
-    {
-        return $this->transport->send('GET', '/memory/threads', $query, null);
-    }
-
-    /**
-     * @return array<string, mixed>
-     */
-    public function createThread(): array
-    {
-        return $this->transport->send('POST', '/memory/threads', null, null);
-    }
-
-    /**
-     * @return array<string, mixed>
-     */
-    public function getThread(string $thread): array
-    {
-        return $this->transport->send('GET', '/memory/threads/' . $thread, null, null);
-    }
-
-    /**
-     * @return array<string, mixed>
-     */
-    public function deleteThread(string $thread): array
-    {
-        return $this->transport->send('DELETE', '/memory/threads/' . $thread, null, null);
-    }
-
-    /**
      * @param  array<string, mixed>  $params
      * @return array<string, mixed>
      */
