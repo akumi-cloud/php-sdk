@@ -11,6 +11,8 @@ final class SearchRequest
         public readonly string $query,
         public readonly ?array $collection = null,
         public readonly ?string $user_ref = null,
+        public readonly ?string $as_of = null,
+        public readonly mixed $between = null,
         public readonly ?int $limit = null,
     ) {}
 
@@ -23,6 +25,8 @@ final class SearchRequest
             query: $data['query'],
             collection: $data['collection'] ?? null,
             user_ref: $data['user_ref'] ?? null,
+            as_of: $data['as_of'] ?? null,
+            between: $data['between'] ?? null,
             limit: $data['limit'] ?? null,
         );
     }
