@@ -36,6 +36,7 @@ final class ChatCompletionsRequest
         public readonly ?array $tools = null,
         public readonly ?string $tool_choice = null,
         public readonly ?bool $parallel_tool_calls = null,
+        public readonly ?string $reasoning_effort = null,
         public readonly ?bool $cache = null,
         public readonly mixed $response_format = null,
     ) {}
@@ -74,6 +75,7 @@ final class ChatCompletionsRequest
             tools: $data['tools'] ?? null,
             tool_choice: $data['tool_choice'] ?? null,
             parallel_tool_calls: $data['parallel_tool_calls'] ?? null,
+            reasoning_effort: $data['reasoning_effort'] ?? null,
             cache: $data['cache'] ?? null,
             response_format: $data['response_format'] ?? null,
         );
